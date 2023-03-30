@@ -7,14 +7,7 @@ let dia = "";
 let hora = "";
 let valorSesion;
 
-
-for (let index = 1; index < 4; index++) {
-    paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
-    console.log("El paciente número " + index + " es: " + paciente);
-    dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
-    console.log("El día asignado es: " + dia);
-    hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
-    console.log("La hora o turno asignado es: " + hora);
+function pedirValor(){
     do{
 
         valorSesion = parseInt(prompt("Por favor, ingresá el VALOR DE LA SESIÓN:"));
@@ -24,6 +17,16 @@ for (let index = 1; index < 4; index++) {
     }
         while (isNaN(valorSesion) );
         console.log("El valor acordado es: " + valorSesion);
+}
+
+for (let index = 1; index < 4; index++) {
+    paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
+    console.log("El paciente número " + index + " es: " + paciente);
+    dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
+    console.log("El día asignado es: " + dia);
+    hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
+    console.log("La hora o turno asignado es: " + hora);
+    pedirValor ();
     
 };
 
