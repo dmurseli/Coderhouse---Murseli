@@ -19,9 +19,9 @@ function pedirValor(){
         console.log("El valor acordado es: " + valorSesion);
 }
 
-for (let index = 1; index < 4; index++) {
+for (let i = 1; i < 4; i++) {
     paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
-    console.log("El paciente número " + index + " es: " + paciente);
+    console.log("El paciente número " + i + " es: " + paciente);
     dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
     console.log("El día asignado es: " + dia);
     hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
