@@ -1,33 +1,170 @@
-// Crear un algoritmo con un condicional
-// Crear un algoritmo utilizando un ciclo
-// Armar un simulador interactivo, la estructura final de tu proyecto integrador
+/*************************************************************************************************/
+/*************************************************************************************************/
+/********************************* SEGUNDA ENTREGA MURSELI ***************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
 
-let paciente = "";
-let dia = "";
-let hora = "";
-let valorSesion;
+// Todo lo que incluía la primera entrega, agregando:
 
-function pedirValor(){
-    do{
+// Funciones - Declarar e invocar funciones -
+// Objetos - Crear objetos a partir de una clase -
+// Arrays - Cargar elementos en un array con metodos vistos en clase ( .push() o .unshift() ) -
+// Funciones de Orden Superior - Utilizar al menos una de los métodos vistos en esta clase ( .forEach() .map() .filter() ) -
 
-        valorSesion = parseInt(prompt("Por favor, ingresá el VALOR DE LA SESIÓN:"));
-        if(isNaN(valorSesion)){
-            alert("Eso no es un número, por favor ingrese un número válido")
-        }
-    }
-        while (isNaN(valorSesion) );
-        console.log("El valor acordado es: " + valorSesion);
+class Paciente {
+  constructor(
+    nombre,
+    apellido,
+    edad,
+    obraSocial,
+    diaAsignado,
+    horaAsignada,
+    valorSesion
+  ) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+    this.obraSocial = obraSocial;
+    this.diaAsignado = diaAsignado;
+    this.horaAsignada = horaAsignada;
+    this.valorSesion = valorSesion;
+  }
 }
 
-for (let i = 1; i < 4; i++) {
-    paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
-    console.log("El paciente número " + i + " es: " + paciente);
-    dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
-    console.log("El día asignado es: " + dia);
-    hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
-    console.log("La hora o turno asignado es: " + hora);
-    pedirValor ();
+let misPacientes = [];
+
+let nombre;
+let apellido;
+let edad = 0;
+let obraSocial;
+let diaAsignado;
+let horaAsignada;
+let valorSesion = 0;
+
+let continuarCarga = "SI";
+
+const cargarPaciente = () => {
+  do {
+    nombre = prompt("Por favor, ingrese el nombre del PACIENTE:");
+    apellido = prompt("Por favor, ingrese el apellido del PACIENTE:");
+
     
+      //Valída si es númerica la entrada de la edad
+      do {
+        edad = parseInt(prompt("Por favor, ingresá la EDAD del PACIENTE:"));
+
+        if (isNaN(edad)) {
+          alert("Eso no es un número, por favor ingrese un número válido");
+        }
+      } while (isNaN(edad));
+      {
+        console.log("La edad es: " + edad);
+      }
+      //Valída si es númerica la entrada del valor de la sesión
+      do {
+        valorSesion = parseInt(
+          prompt("Por favor, ingresá el VALOR DE LA SESIÓN:")
+        );
+
+        if (isNaN(valorSesion)) {
+          alert("Eso no es un número, por favor ingrese un número válido");
+        }
+      } while (isNaN(valorSesion));
+      {
+        console.log("El valor acordado es: " + valorSesion);
+      }
+
+
+    obraSocial = prompt("Por favor, ingrese la obraSocial del PACIENTE");
+    diaAsignado = prompt("Por favor, ingrese el día DE LA SESIÓN:");
+    horaAsignada = prompt("Por favor, ingrese la HORA/turno DE LA SESIÓN:");
+
+    const nuevoPaciente = new Paciente(
+      nombre,
+      apellido,
+      edad,
+      obraSocial,
+      diaAsignado,
+      horaAsignada,
+      valorSesion
+    );
+
+    
+    
+    misPacientes.push(nuevoPaciente);
+    continuarCarga = prompt(
+      "¿Quiere seguir cargando algún otro PACIENTE? SI/NO"
+    );
+  } while (continuarCarga.toUpperCase() !== "NO");
+    confirm("Finalizó la carga");
 };
 
- console.log("Finalizó la carga");
+cargarPaciente();
+
+console.log(
+  "--> Ésta es la lista de todos los PACIENTES que están cargados",
+  misPacientes
+);
+
+function consultarPaciente () {
+  misPacientes.forEach((persona) => {
+    let nombreConsultado = prompt("Por favor, ingrese el nombre del PACIENTE a consultar", persona.includes);
+    console.log("***************** PACIENTE CONSULTADO ************************");
+    console.log("NOMBRE COMPLETO: " + persona.nombre + " " + persona.apellido);
+    console.log("DÍA DE LA SESIÓN: " + persona.diaAsignado + " a las " + persona.horaAsignada + " hs");
+    console.log("OBRA SOCIAL: " + persona.obraSocial);
+    console.log("***************** FIN DE CONSULTA ************************");
+  })
+};
+
+// function consultarDia () {
+//   let queDia = prompt("Consulte los pacientes de un día específico. Ingrese el día por favor:", misPacientes.filter((queDia) => queDia === ""));
+//   confirm("");
+// };
+
+consultarPaciente();
+
+
+
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/********************************* PRIMERA ENTREGA MURSELI ***************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+
+// let paciente = "";
+// let dia = "";
+// let hora = "";
+// let valorSesion;
+
+// function pedirValor() {
+//   //
+//   do {
+//     valorSesion = parseInt(prompt("Por favor, ingresá el VALOR DE LA SESIÓN:"));
+
+//     if (isNaN(valorSesion)) {
+//       //si el valor no es un número
+//       alert("Eso no es un número, por favor ingrese un número válido");
+//     }
+//   } while (isNaN(valorSesion));
+//   {
+//     //mientras no sea un numero, vuelve al do
+//     console.log("El valor acordado es: " + valorSesion);
+//   }
+// }
+
+// for (let i = 1; i < 2; i++) {
+//     paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
+//     console.log("El paciente número " + i + " es: " + paciente);
+//     dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
+//     console.log("El día asignado es: " + dia);
+//     hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
+//     console.log("La hora o turno asignado es: " + hora);
+//     pedirValor ();
+
+// };
+
+//console.log("Finalizó la carga");
