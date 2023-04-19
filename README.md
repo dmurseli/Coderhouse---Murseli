@@ -1,4 +1,5 @@
 # Segunda entrega - Murseli
+
 Las consignas son:
 Todo lo que incluía la primera entrega, agregando:
 
@@ -9,16 +10,18 @@ Funciones de Orden Superior - Utilizar al menos una de los métodos vistos en es
 Me estaba olvidando, el README, deja uno solo, el .txt o el .md. Y porfa, en el readme va:
 
 - Que es mi simulador
+  Este simulador intenta suplir la necesidad de un profesional d ela Psicología para agendar turnos y algunos datos básicos del paciente.
 
 - Que funcionalidad incluye para el usuario
+  En este caso, el usuario sería el profesional o su asistente personal, y podría cargar los días de sesión, honoriario de dicha sesión, nombre, apellido y obra social
 
 - Por donde se le pide información al usuario
+  Mediante prompt
 
 - Como se le devuelve la info al usuario
-
-(Es como un manual de usuario de su simulador)
-
+  por conola y mediante alerts
 
 # Primera entrega - Murseli
+
 Son los primeros pasos para una agenda de un terapeuta o psicólogo.
 El simulador contiene un for, un while, y se utilizada el ingreso de prompt y alert
