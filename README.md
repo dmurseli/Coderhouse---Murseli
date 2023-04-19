@@ -23,5 +23,5 @@ Me estaba olvidando, el README, deja uno solo, el .txt o el .md. Y porfa, en el 
 
 # Primera entrega - Murseli
 
-Son los primeros pasos para una agenda de un terapeuta o psicólogo./n
+Son los primeros pasos para una agenda de un terapeuta o psicólogo.
 El simulador contiene un for, un while, y se utilizada el ingreso de prompt y alert
