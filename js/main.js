@@ -1,33 +1,72 @@
-// Crear un algoritmo con un condicional
-// Crear un algoritmo utilizando un ciclo
-// Armar un simulador interactivo, la estructura final de tu proyecto integrador
+// La tercera pre-entrega consiste en:
+// Definir eventos a manejar y su función de respuesta: el manejo de DOM y eventos, deben permitir dar
+// notificaciones al usuario, del resultado de las funciones de procesos (funcionalidades simuladas para el circuito escogido).
+// Modificar el DOM, ya sea para definir elementos al cargar la página o para realizar salidas de un procesamiento. Como lo
+// vimos en las clases 10 y 11 donde interactuamos con el DOM para listar elementos o mostrar datos de un objeto (entidad de nuestro
+// contexto) en alguna sección de nuestro HTML.
+// Deberán agregar y entregar uso de JSON y Storage: almacenar datos (mediante clave-valor) en el Storage y recuperarlos, permitirá
+// un almacenamiento y gestión de la información más apropiada para conseguir el flujo de la simulación deseada (como lo vimos en la
+// clase 11 cuando creamos carreras y le añadimos cátedras o cuando matriculamos estudiantes a una carrera).
+// En relación con la primera y segunda pre-entregas: ya no usamos alert() como salida y promt() como entrada,
+// ahora modificamos el DOM para las salidas y capturamos los eventos del usuario sobre inputs y botones para las entradas.
+// No dejar código comentado, descartarlo.
 
-let paciente = "";
-let dia = "";
-let hora = "";
-let valorSesion;
 
-function pedirValor(){
-    do{
-
-        valorSesion = parseInt(prompt("Por favor, ingresá el VALOR DE LA SESIÓN:"));
-        if(isNaN(valorSesion)){
-            alert("Eso no es un número, por favor ingrese un número válido")
-        }
-    }
-        while (isNaN(valorSesion) );
-        console.log("El valor acordado es: " + valorSesion);
+class Paciente {
+  constructor(
+    nombre,
+    apellido,
+    edad,
+    obraSocial,
+    diaAsignado,
+    horaAsignada,
+    valorSesion
+  ) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+    this.obraSocial = obraSocial;
+    this.diaAsignado = diaAsignado;
+    this.horaAsignada = horaAsignada;
+    this.valorSesion = valorSesion;
+  }
 }
 
-for (let index = 1; index < 4; index++) {
-    paciente = prompt("Por favor, ingresá el nombre del PACIENTE:");
-    console.log("El paciente número " + index + " es: " + paciente);
-    dia = prompt("Por favor, ingresá el DIA DE LA SESIÓN:");
-    console.log("El día asignado es: " + dia);
-    hora = prompt("Por favor, ingresá la HORA DE LA SESIÓN:");
-    console.log("La hora o turno asignado es: " + hora);
-    pedirValor ();
-    
+let misPacientes = [];
+
+const form = document.getElementById("cargaForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  cargarPaciente();
+});
+
+
+const cargarPaciente = () => {
+  let nombresInput = document.getElementById("nombresInput").value;
+  let apellidosInput = document.getElementById("apellidosInput").value;
+  let telefonoInput = document.getElementById("telefonoInput").value;
+  let edadInput = document.getElementById("edadInput").value;
+  let inicioInput = document.getElementById("inicioInput").value;
+  let diaInput = document.getElementById("diaInput").value;
+  let horaInput = document.getElementById("horaInput").value;
+  let emailInput = document.getElementById("emailInput").value;
+
+  const nuevoPaciente = new Paciente(
+    nombresInput,
+    apellidosInput,
+    telefonoInput,
+    edadInput,
+    inicioInput,
+    diaInput,
+    horaInput,
+    emailInput
+  );
+
+  misPacientes.push(nuevoPaciente);
+  localStorage.setItem("datos", JSON.stringify(datos));
 };
 
- console.log("Finalizó la carga");
+
+
+
